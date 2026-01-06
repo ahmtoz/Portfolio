@@ -63,15 +63,16 @@ section {
     max-width: 600px;
 }
 
-.hero-content button {
+button {
     padding: .5rem 1rem;
     font-size: 1rem;
+    width: fit-content;
     border: 1px solid #C778DD;
     background-color: transparent;
     color: #ffffff
 }
 
-.hero-content button:hover {
+button:hover {
     background-color: #C778DD;
     cursor: pointer;
 }
@@ -96,4 +97,51 @@ section {
     align-items: flex-start;
     justify-content: space-between;
     gap: 2rem;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    max-width: 600px;
+}
+
+.about-content h2::before {
+    content: "#";
+    color: #C778DD;
+}
+
+.about-content h2::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 15rem;
+    height: 1px;
+    background: #C778DD;
+    margin-left: 1rem;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.content-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.about-image-container {
+
+}
+
+.about-image-container img {
+    width: 450px;
+    height: 350px;
 }
