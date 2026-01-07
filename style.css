@@ -177,3 +177,29 @@ section {
 .experience-panel.active {
     display: block;
 }
+
+.skills-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-block-start: 4rem;
+}
+
+.skill-container {
+    flex: 1 0 10rem;
+    border: 1px solid #cccccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-container h4 {
+    padding: .5rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.skill-container p {
+    padding: .5rem;
+    font-size: 1rem;
+    font-style: italic;
+}
