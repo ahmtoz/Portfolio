@@ -63,7 +63,7 @@ section {
     max-width: 600px;
 }
 
-button {
+.primary-button {
     padding: .5rem 1rem;
     font-size: 1rem;
     width: fit-content;
@@ -72,7 +72,7 @@ button {
     color: #ffffff
 }
 
-button:hover {
+.primary-button:hover {
     background-color: #C778DD;
     cursor: pointer;
 }
@@ -99,22 +99,22 @@ button:hover {
     gap: 2rem;
 }
 
-.about-content h2 {
-    font-size: 2rem;
-}
-
 .about-content p {
     font-size: 1.2rem;
     color: #cccccc;
     max-width: 600px;
 }
 
-.about-content h2::before {
+.hash-and-line {
+    font-size: 2rem;
+}
+
+.hash-and-line::before {
     content: "#";
     color: #C778DD;
 }
 
-.about-content h2::after {
+.hash-and-line::after {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -124,13 +124,13 @@ button:hover {
     margin-left: 1rem;
 }
 
-.content-wrapper {
+.about-content-wrapper {
     display: flex;
     justify-content: space-between;
     gap: 4rem;
 }
 
-.content-info {
+.about-content-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -138,10 +138,42 @@ button:hover {
 }
 
 .about-image-container {
+    position: relative;
 
+}
+
+.about-image-container::after {
+    content: "";
+    position: absolute;
+    right: 2rem;
+    display: block;
+    width: 50%;
+    height: 1px;
+    background: #C778DD;
+    margin-top: 4rem;
 }
 
 .about-image-container img {
     width: 450px;
     height: 350px;
+}
+
+.experience-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;;
+}
+
+.experience-content-wrapper ul{
+    width: fit-content;
+}
+
+.experience-panel {
+    display: none;
+    width: 30%;
+    height: 30%;
+}
+
+.experience-panel.active {
+    display: block;
 }
