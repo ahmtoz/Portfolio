@@ -396,4 +396,81 @@ footer {
     .hero-image-container img {
         width: 280px;
     }
+
+    .about-content {
+        gap: 3rem;
+    }
+
+    .hash-and-line {
+        font-size: 1.8rem;
+    }
+
+    .hash-and-line::after {
+        width: 10rem;
+    }
+
+    .about-content-wrapper {
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .about-content p {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+
+    .about-image-container img {
+        width: 320px;
+    }
+
+    .about-image-container::after {
+        margin-top: 2rem;
+        right: 1rem;
+    }
+
+    .experience-content-wrapper {
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .experience-content-wrapper ul li {
+        font-size: 1.3rem;
+    }
+
+    .experience-content-wrapper ul li a {
+        font-size: 1.1rem;
+    }
+
+    .experience-panel {
+        width: 50%;
+    }
+
+    .experience-panel h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .experience-panel p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .skills-wrapper {
+        gap: 1.5rem;
+        padding-block-start: 3rem;
+    }
+
+    .skill-container {
+        flex: 1 1 auto;
+    }
+
+    .skill-container h4 {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .skill-container p {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
 }
