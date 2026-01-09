@@ -308,6 +308,14 @@ section {
     padding: .5rem;
 }
 
+.hobbies-image-container {
+    width: 100%;;
+}
+
+.hobbies-image-container img {
+    width: 10rem;;
+}
+
 .contact-container {
     display: flex;
     justify-content: space-between;
@@ -371,6 +379,15 @@ footer {
 
 /* Tablet Düzenlemeleri (Max-width: 1024px) */
 @media (max-width: 1024px) {
+    nav {
+        padding: 2rem 3rem 1rem 3rem;
+        font-size: 1rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
     section {
         padding: 4rem 3rem; 
     }
@@ -454,7 +471,7 @@ footer {
         font-size: 1rem;
         line-height: 1.5;
     }
-    
+
     .skills-wrapper {
         gap: 1.5rem;
         padding-block-start: 3rem;
@@ -472,5 +489,83 @@ footer {
     .skill-container p {
         font-size: 0.9rem;
         padding: 0.4rem;
+    }
+
+    .projects-wrapper {
+        gap: 1.5rem;
+        padding-block-start: 3rem;
+    }
+
+    .project-container {
+        max-width: 18rem;
+    }
+
+    .project-container > p {
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+
+    .project-info-container {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .project-info-container h4 {
+        font-size: 1.4rem;
+    }
+
+    .project-info-container p {
+        font-size: 0.9rem;
+    }
+
+    .project-button-wrapper {
+        gap: 0.8rem;
+    }
+    
+    .project-button-wrapper .primary-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .hobbies-container {
+        gap: 2rem;
+        margin-top: 3rem;
+        align-items: center;
+    }
+
+    .hobbies-info-container {
+        max-width: 18rem;
+        gap: 0.8rem;
+    }
+
+    .hobbies-info {
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+
+    .hobbies-image-container img {
+        width: 8rem;
+    }
+
+    footer {
+        padding: 3rem 3rem;
+        gap: 2.5rem;
+    }
+
+    .footer-info-wrapper {
+        gap: 1.5rem;
+    }
+
+    .footer-info-container p, 
+    .footer-info-container a {
+        font-size: 0.95rem;
+    }
+
+    .footer-media-container {
+        padding: 0.8rem;
+    }
+
+    .footer-copyright-container {
+        font-size: 0.9rem;
     }
 }
