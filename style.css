@@ -16,13 +16,17 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #1E1E1E;
     width: 100%;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 10rem 0rem 10rem;
+    padding: 2rem 10rem 1rem 10rem;
     max-width: 1440px;
     margin-inline: auto;
 }
@@ -93,7 +97,7 @@ section {
 }
 
 .hero-image-container {
-
+    width: fit-content;
 }
 
 .hero-image-container img {
