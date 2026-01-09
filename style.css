@@ -368,3 +368,32 @@ footer {
     font-size: 1rem;
     color: #ABB2BF;
 }
+
+/* Tablet Düzenlemeleri (Max-width: 1024px) */
+@media (max-width: 1024px) {
+    section {
+        padding: 4rem 3rem; 
+    }
+
+    #hero-section {
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        gap: 2.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        max-width: 450px;
+    }
+
+    .hero-image-container img {
+        width: 280px;
+    }
+}
