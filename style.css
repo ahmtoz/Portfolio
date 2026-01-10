@@ -570,11 +570,60 @@ footer {
 }
 
 @media (max-width: 768px) {
+    nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        z-index: 20;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: #ffffff;
+        transition: 0.3s;
+    }
+
+    nav ul {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        background-color: #1E1E1E;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transition: 0.5s ease;
+        border-left: 1px solid #C778DD;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    /* Hamburger Animasyonu (X hali) */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
     section {
         padding: 3rem 2rem;
         flex-direction: column;
         align-items: center;
-        text-align: center;
     }
 
     #hero-section {
@@ -601,8 +650,6 @@ footer {
     }
 
     .about-content {
-        align-items: center;
-        text-align: center;
         gap: 2rem;
     }
 
@@ -654,5 +701,55 @@ footer {
         padding: 1rem;
         border-left: 2px solid #C778DD;
         background-color: rgba(199, 120, 221, 0.05);
+    }
+
+    .skills-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+        padding-block-start: 2rem;
+        align-items: center;
+    }
+
+    .skill-container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .skill-container h4 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .skill-container p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .projects-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        padding-block-start: 2rem;
+    }
+
+    .project-container {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .project-image-container {
+        height: 12rem;
+    }
+
+    .project-info-container h4 {
+        font-size: 1.5rem;
+    }
+
+    .project-info-container p {
+        font-size: 1rem;
+    }
+
+    .project-button-wrapper {
+        justify-content: center;
     }
 }
