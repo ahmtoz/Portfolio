@@ -148,6 +148,42 @@ section {
     gap: 1.5rem;
 }
 
+.education-table-container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    border: 1px solid #ABB2BF;
+}
+
+.custom-table th, 
+.custom-table td {
+    padding: 0.8rem;
+    text-align: left;
+    border: 1px solid #444;
+    color: #ABB2BF;
+}
+
+.custom-table th {
+    background-color: rgba(199, 120, 221, 0.1);
+    color: white;
+    font-weight: bold;
+}
+
+.custom-table tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.custom-table tbody tr:hover {
+    background-color: rgba(199, 120, 221, 0.05);
+    transition: 0.3s;
+}
+
 .about-image-container {
     position: relative;
     width: 100%;
@@ -437,10 +473,16 @@ ul.exp-details li::before {
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr auto; 
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     margin-top: 4rem;
+    align-items: start;
+}
+
+.contact-left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .info {
@@ -497,6 +539,45 @@ ul.exp-details li::before {
 .link img {
     width: 20px;
     height: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background-color: transparent;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    background-color: transparent;
+    border: 1px solid #ABB2BF;
+    padding: 0.8rem;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #C778DD;
+}
+
+.contact-form .primary-button {
+    margin-top: 0.5rem;
 }
 
 footer {
@@ -821,6 +902,12 @@ footer {
         width: 8rem;
     }
 
+    .custom-table th, 
+    .custom-table td {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
     .about-image-container img {
         width: 200px;
         max-width: 300px;
@@ -921,6 +1008,15 @@ footer {
 
     .links-container {
         width: fit-content;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .links-container {
+        width: 100%;
     }
 
     .footer-info-wrapper {
