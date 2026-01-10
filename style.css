@@ -377,8 +377,7 @@ footer {
     color: #ABB2BF;
 }
 
-/* Tablet Düzenlemeleri (Max-width: 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 960px) {
     nav {
         padding: 2rem 3rem 1rem 3rem;
         font-size: 1rem;
@@ -567,5 +566,93 @@ footer {
 
     .footer-copyright-container {
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #hero-section {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .hero-image-container img {
+        width: 250px;
+    }
+
+    .about-content {
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-content-wrapper {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .about-content-info {
+        align-items: center;
+    }
+
+    .hash-and-line::after {
+        width: 8rem;
+    }
+
+    .about-image-container img {
+        width: 200px;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .about-image-container::after {
+        display: none;
+    }
+
+    .experience-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .experience-list li {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .experience-panel {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 1rem;
+        border-left: 2px solid #C778DD;
+        background-color: rgba(199, 120, 221, 0.05);
     }
 }
