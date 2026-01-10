@@ -1,35 +1,36 @@
 const links = document.querySelectorAll(".experience-list a");
 const panels = document.querySelectorAll(".experience-panel");
-const wrapper = document.querySelector(".experience-content-wrapper");
-
+const expWrapper = document.querySelector(".experience-content-wrapper");
 
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
-
 links.forEach(link => {
-    const showExperience = (e) => {
+    const handleExp = (e) => {
         if (e.type === 'click') e.preventDefault();
         
         const targetId = link.dataset.target;
         const targetPanel = document.getElementById(targetId);
 
-        panels.forEach(panel => panel.classList.remove("active"));
+        // Reset
+        panels.forEach(p => p.classList.remove("active"));
+        links.forEach(l => l.classList.remove("active-link"));
+
+        link.classList.add("active-link");
 
         if (window.innerWidth <= 768) {
-            // MOBİL: Paneli linkin bulunduğu li içine taşı
-            const parentLi = link.closest('li');
-            parentLi.appendChild(targetPanel);
+            // Mobilde li içine taşı
+            link.closest('li').appendChild(targetPanel);
         } else {
-            // DESKTOP: Paneli tekrar ana wrapper içine taşı (eski düzen)
-            wrapper.appendChild(targetPanel);
+            // Masaüstünde orijinal wrapper içine geri taşı
+            expWrapper.appendChild(targetPanel);
         }
 
         targetPanel.classList.add("active");
     };
 
-    link.addEventListener("mouseenter", showExperience);
-    link.addEventListener("click", showExperience);
+    link.addEventListener("click", handleExp);
+    link.addEventListener("mouseenter", handleExp);
 });
 
 hamburger.addEventListener('click', () => {
