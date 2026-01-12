@@ -19,10 +19,8 @@ links.forEach(link => {
         link.classList.add("active-link");
 
         if (window.innerWidth <= 768) {
-            // Mobilde li içine taşı
             link.closest('li').appendChild(targetPanel);
         } else {
-            // Masaüstünde orijinal wrapper içine geri taşı
             expWrapper.appendChild(targetPanel);
         }
 
@@ -38,7 +36,6 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Linklerden birine tıklandığında menünün kapanması için
 document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
