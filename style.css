@@ -101,11 +101,13 @@ section {
 
 .hero-image-container {
     width: fit-content;
+    overflow: hidden;
 }
 
 .hero-image-container img {
     width: 350px;
     height: auto;
+    border-radius: .5rem;
 }
 
 
@@ -404,7 +406,8 @@ ul.exp-details li::before {
 }
 
 .project-image-container img {
-
+    width: 100%;
+    height: 100%;
 }
 
 .project-container > p {
@@ -467,7 +470,7 @@ ul.exp-details li::before {
 }
 
 .hobbies-image-container img {
-    width: 10rem;
+    width: 15rem;
     height: auto;
 }
 
@@ -512,8 +515,8 @@ ul.exp-details li::before {
     flex-direction: column;
     padding: 1.5rem;
     border: 1px solid #cccccc;
-    height: fit-content;
-    min-width: 200px;
+    height: auto;
+    width: fit-content;
 }
 
 .links-container p {
@@ -530,6 +533,7 @@ ul.exp-details li::before {
     color: #ABB2BF;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .link:hover {
@@ -580,6 +584,11 @@ ul.exp-details li::before {
     margin-top: 0.5rem;
 }
 
+input[type="text"], 
+input[type="email"] {
+    border-radius: 4px;
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -617,12 +626,24 @@ footer {
 
 .footer-links-container {
     display: flex;
-    gap: .5rem;
+    gap: 1.5rem;
 }
 
-.footer-links-container img {
-    width: 2rem;
-    height: 2rem;
+.footer-links-container a {
+    text-decoration: none;
+    color: #ABB2BF;
+    font-size: 1.8rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+/* Üzerine gelince efekt */
+.footer-links-container a:hover {
+    color: #C778DD;
+    transform: translateY(-3px);
+}
+
+.footer-links-container a:last-child:hover {
+    color: #E06C75;
 }
 
 .footer-copyright-container {
@@ -659,7 +680,7 @@ footer {
         font-size: 2.2rem;
     }
 
-    .hero-content p {
+    .hero-content h1 + p {
         font-size: 1.1rem;
         max-width: 450px;
     }
@@ -670,6 +691,10 @@ footer {
 
     .hash-and-line {
         font-size: 1.8rem;
+    }
+    
+    .hash-and-line ~ div {
+        position: relative;
     }
 
     .hash-and-line::after {
@@ -785,10 +810,6 @@ footer {
     .hobbies-info {
         padding: 0.4rem;
         font-size: 0.9rem;
-    }
-
-    .hobbies-image-container img {
-        width: 8rem;
     }
 
     footer {
@@ -1006,17 +1027,9 @@ footer {
         gap: 2rem;
     }
 
-    .links-container {
-        width: fit-content;
-    }
-
     .contact-container {
         grid-template-columns: 1fr;
         gap: 3rem;
-    }
-
-    .links-container {
-        width: 100%;
     }
 
     .footer-info-wrapper {
