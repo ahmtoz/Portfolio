@@ -711,7 +711,7 @@ footer {
     }
 
     .about-image-container img {
-        width: 320px;
+        display: none;
     }
 
     .experience-content-wrapper {
