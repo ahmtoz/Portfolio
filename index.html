@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -30,29 +32,49 @@
     </header>
     <main>
         <section id="hero-section">
-            <div class="hero-content">
+            <canvas id="hero-canvas" class="hero-bg"></canvas>
+            <div class="hero-bg-overlay"></div>
+
+            <div class="hero-content-centered">
+                <!-- Floating Glass Badges -->
+                <div class="floating-badge badge-1">✦ UI/UX Enthusiast</div>
+                <div class="floating-badge badge-2">✦ Frontend Engineer</div>
+                <div class="floating-badge badge-3">✦ Creative Dev</div>
+
                 <span class="hero-greeting">Hi, I am Ahmet 👋</span>
-                <h1 class="hero-title">Crafting <span class="gradient-text">Experiences</span> <br> That Matter</h1>
-                <p class="hero-description">Frontend Developer & UI Enthusiast building clean, accessible, and user-focused web interfaces.</p>
-                <div class="hero-buttons">
-                    <button class="primary-button glowing-btn" onclick="window.location.href='#contact-section'">Contact me</button>
-                    <button class="secondary-button" onclick="window.location.href='#projects-section'">View Projects</button>
+                <h1 class="hero-title-massive">Frontend & UI Developer</h1>
+                <p class="hero-description-centered">Transforming ideas into clean, accessible, and user-focused web
+                    interfaces with modern technologies.</p>
+
+                <div class="hero-buttons-centered">
+                    <button class="primary-button glowing-btn" onclick="window.location.href='#contact-section'">Contact
+                        me</button>
+                    <button class="secondary-button" onclick="window.location.href='#projects-section'">View
+                        Projects</button>
                 </div>
             </div>
-            <div class="hero-image-container">
-                <div class="image-glow"></div>
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="Abstract Tech Background" class="floating-image">
+
+            <!-- Mouse Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>Scroll</p>
             </div>
         </section>
         <section id="about-section">
             <div class="about-content">
-                <h2 class="hash-and-line">about-me</h2>       
+                <h2 class="hash-and-line">about-me</h2>
                 <div class="about-content-wrapper">
                     <div class="about-content-info">
-                        <p>I am a 4th-year Computer Education and Instructional Technologies student at Middle East Technical University (METU) with a strong interest in UI development, frontend technologies, and accessible web design.
+                        <p>I am a 4th-year Computer Education and Instructional Technologies student at Middle East
+                            Technical University (METU) with a strong interest in UI development, frontend technologies,
+                            and accessible web design.
                             <br>
                             <br>
-                        I enjoy transforming ideas into clean, functional, and intuitive interfaces using modern web technologies.</p>
+                            I enjoy transforming ideas into clean, functional, and intuitive interfaces using modern web
+                            technologies.
+                        </p>
                         <div class="education-table-container">
                             <table class="custom-table">
                                 <thead>
@@ -76,13 +98,14 @@
                                 </tbody>
                             </table>
                         </div>
-                        <button class="primary-button" onclick="window.open('https://linkedin.com/in/ahmet-faruk-öz', '_blank')">Read more</button>
+                        <button class="primary-button"
+                            onclick="window.open('https://linkedin.com/in/ahmet-faruk-öz', '_blank')">Read more</button>
                     </div>
                     <div class="about-image-container">
                         <img src="./images/about-me.png" alt="">
                     </div>
                 </div>
-            </div>    
+            </div>
         </section>
         <section id="experience-section">
             <div class="experince-content">
@@ -91,7 +114,8 @@
                     <ul class="experience-list">
                         <li>/academy
                             <ul>
-                                <li><a href="#" data-target="exp-metu" class="active-link">/Student Assistant -- METU</a></li>
+                                <li><a href="#" data-target="exp-metu" class="active-link">/Student Assistant --
+                                        METU</a></li>
                             </ul>
                         </li>
                         <li>/work
@@ -146,7 +170,7 @@
                         <span>Responsive Design</span> <span>Accessibility</span>
                     </div>
                 </div>
-                
+
                 <div class="skill-container">
                     <h4>Tools & Technologies</h4>
                     <div class="skill-tags">
@@ -172,9 +196,11 @@
                     <p class="project-tech-tags">React · JS · CSS · Accessibility</p>
                     <div class="project-info-container">
                         <h4>AccEase</h4>
-                        <p>AccEase is a web-based project focused on accessibility-first interface design, aiming to improve usability for users with diverse needs.</p>
+                        <p>AccEase is a web-based project focused on accessibility-first interface design, aiming to
+                            improve usability for users with diverse needs.</p>
                         <div class="project-button-wrapper">
-                            <button class="primary-button" onclick="window.open('https://github.com/ahmtoz/Easeo', '_blank')">Github</button>
+                            <button class="primary-button"
+                                onclick="window.open('https://github.com/ahmtoz/Easeo', '_blank')">Github</button>
                         </div>
                     </div>
                 </div>
@@ -184,9 +210,11 @@
                     <p class="project-tech-tags">Performance Analysis · Teamwork</p>
                     <div class="project-info-container">
                         <h4>ISPI Case Study</h4>
-                        <p>International competition focused on analyzing organizational problems and developing strategic performance solutions.</p>
+                        <p>International competition focused on analyzing organizational problems and developing
+                            strategic performance solutions.</p>
                         <div class="project-button-wrapper">
-                            <button class="primary-button" onclick="window.open('https://linkedin.com/in/ahmet-faruk-öz', '_blank')">Details</button>
+                            <button class="primary-button"
+                                onclick="window.open('https://linkedin.com/in/ahmet-faruk-öz', '_blank')">Details</button>
                         </div>
                     </div>
                 </div>
@@ -196,9 +224,11 @@
                     <p class="project-tech-tags">Articulate · Gamification · ID</p>
                     <div class="project-info-container">
                         <h4>TÜBİTAK 2209-A</h4>
-                        <p>A gamified learning module developed for undergraduate research, focusing on engagement through game-based scenarios.</p>
+                        <p>A gamified learning module developed for undergraduate research, focusing on engagement
+                            through game-based scenarios.</p>
                         <div class="project-button-wrapper">
-                            <button class="primary-button" onclick="window.open('https://linkedin.com/in/ahmet-faruk-öz', '_blank')">Details</button>
+                            <button class="primary-button"
+                                onclick="window.open('https://linkedin.com/in/ahmet-faruk-öz', '_blank')">Details</button>
                         </div>
                     </div>
                 </div>
@@ -208,21 +238,26 @@
                     <p class="project-tech-tags">React Hooks · Game Logic</p>
                     <div class="project-info-container">
                         <h4>Tic Tac Toe</h4>
-                        <p>Interactive game implementing React state management and algorithmic logic for user interactions.</p>
+                        <p>Interactive game implementing React state management and algorithmic logic for user
+                            interactions.</p>
                         <div class="project-button-wrapper">
-                            <button class="primary-button" onclick="window.open('https://github.com/ahmtoz/TicTacToe', '_blank')">Github</button>
+                            <button class="primary-button"
+                                onclick="window.open('https://github.com/ahmtoz/TicTacToe', '_blank')">Github</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-container">
-                    <div class="project-image-container"><img src="./images/translation.png" alt="Translation App"></div>
+                    <div class="project-image-container"><img src="./images/translation.png" alt="Translation App">
+                    </div>
                     <p class="project-tech-tags">Next.js · Tailwind · API</p>
                     <div class="project-info-container">
                         <h4>Translation App</h4>
-                        <p>Responsive translation tool built with Next.js, featuring component-based architecture and modern routing.</p>
+                        <p>Responsive translation tool built with Next.js, featuring component-based architecture and
+                            modern routing.</p>
                         <div class="project-button-wrapper">
-                            <button class="primary-button" onclick="window.open('https://github.com/ahmtoz/React-Translation-App', '_blank')">Github</button>
+                            <button class="primary-button"
+                                onclick="window.open('https://github.com/ahmtoz/React-Translation-App', '_blank')">Github</button>
                         </div>
                     </div>
                 </div>
@@ -232,9 +267,11 @@
                     <p class="project-tech-tags">React · Async JS · API</p>
                     <div class="project-info-container">
                         <h4>GitHub API App</h4>
-                        <p>Dynamic dashboard that fetches and displays real-time GitHub user data using asynchronous JavaScript.</p>
+                        <p>Dynamic dashboard that fetches and displays real-time GitHub user data using asynchronous
+                            JavaScript.</p>
                         <div class="project-button-wrapper">
-                            <button class="primary-button" onclick="window.open('https://github.com/ahmtoz/Github_API', '_blank')">Github</button>
+                            <button class="primary-button"
+                                onclick="window.open('https://github.com/ahmtoz/Github_API', '_blank')">Github</button>
                         </div>
                     </div>
                 </div>
@@ -283,16 +320,16 @@
                             <li>Location: Ankara, Türkiye</li>
                         </ul>
                     </div>
-                    
+
                     <div class="links-container">
                         <p>Find me here</p>
 
                         <a href="https://github.com/ahmtoz" target="_blank" class="link">
-                        <i class="fab fa-github"></i> <span>github</span>
+                            <i class="fab fa-github"></i> <span>github</span>
                         </a>
 
                         <a href="https://linkedin.com/in/ahmet-faruk-öz" target="_blank" class="link">
-                        <i class="fab fa-linkedin"></i> <span>linkedin</span>
+                            <i class="fab fa-linkedin"></i> <span>linkedin</span>
                         </a>
                     </div>
                 </div>
@@ -302,7 +339,7 @@
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="ahmet" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="ahmet@email.com" required>
@@ -335,11 +372,11 @@
                         <a href="https://github.com/ahmtoz" target="_blank" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        
+
                         <a href="https://linkedin.com/in/ahmet-faruk-öz" target="_blank" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        
+
                         <a href="mailto:oz.ahmetf@gmail.com" aria-label="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
@@ -354,4 +391,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

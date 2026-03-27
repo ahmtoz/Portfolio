@@ -16,15 +16,15 @@ body {
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 10;
-    background-color: rgba(30, 30, 30, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    left: 0;
+    z-index: 100;
+    background-color: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 
@@ -96,60 +96,201 @@ nav ul li a::before {
 
 section {
     padding: 5rem 10rem;
-    max-width: 1440px;
     margin-inline: auto;
 }
 
 #hero-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    overflow: hidden;
+    padding-top: 80px;
+    padding-bottom: 4rem;
 }
 
-.hero-content {
+main {
+    overflow-x: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0b0b0f;
+    z-index: -2;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(11, 11, 15, 0.6) 100%),
+        linear-gradient(to bottom, transparent 65%, #1E1E1E 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-content-centered {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 1.5rem;
-    animation: fadeUp 1s ease-out forwards;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    max-width: 900px;
+    padding: 0 2rem;
+    animation: fadeUp 1.2s ease-out forwards;
+    margin-top: 20px;
 }
 
-.hero-greeting {
-    font-size: 1.2rem;
-    color: #C778DD;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.hero-title {
-    font-size: 4rem;
+.hero-title-massive {
+    font-size: 5.5rem;
     line-height: 1.1;
     font-weight: 800;
+    margin: 1.5rem 0;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.gradient-text {
-    background: linear-gradient(90deg, #C778DD, #E06C75);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-description {
+.hero-description-centered {
     font-size: 1.25rem;
     color: #ABB2BF;
-    max-width: 500px;
+    max-width: 600px;
     line-height: 1.6;
+    margin-bottom: 2.5rem;
 }
 
-.hero-buttons {
+.hero-buttons-centered {
     display: flex;
     gap: 1.5rem;
-    margin-top: 1rem;
+    justify-content: center;
 }
+
+/* Floating Glass Badges */
+.floating-badge {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.badge-1 {
+    border: 1px solid rgba(199, 120, 221, 0.4);
+    color: #C778DD;
+    top: 0%;
+    left: -25%;
+    animation: floatBadge 5s infinite ease-in-out;
+}
+
+.badge-2 {
+    top: 25%;
+    right: -25%;
+    animation: floatBadge 6s infinite ease-in-out alternate-reverse;
+}
+
+.badge-3 {
+    bottom: 15%;
+    left: -20%;
+    animation: floatBadge 7s infinite ease-in-out 1s;
+}
+
+/* Mouse Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+    animation: fadeIn 2s ease-out 1s forwards;
+    opacity: 0;
+}
+
+.scroll-indicator p {
+    font-size: 0.75rem;
+    color: #ABB2BF;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+.mouse {
+    width: 24px;
+    height: 38px;
+    border: 2px solid #ABB2BF;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 6px;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background-color: #C778DD;
+    border-radius: 4px;
+    animation: scrollWheel 2s infinite ease-in-out;
+}
+
+@keyframes slowZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes floatBadge {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes scrollWheel {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+/* Left primary/secondary buttons intact */
 
 .primary-button {
     padding: 0.8rem 1.5rem;
@@ -192,49 +333,28 @@ section {
     text-underline-offset: 4px;
 }
 
-.hero-image-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 1.2s ease-out forwards;
-}
-
-.image-glow {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(199,120,221,0.3) 0%, rgba(30,30,30,0) 70%);
-    filter: blur(40px);
-    z-index: 0;
-}
-
-.floating-image {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    z-index: 1;
-    animation: float 6s ease-in-out infinite;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
-}
+/* Removing old hero image CSS and animations */
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -803,31 +923,17 @@ footer {
         padding: 4rem 3rem;
     }
 
-    #hero-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-        justify-items: center;
-        min-height: auto;
+    .hero-title-massive {
+        font-size: 4rem;
     }
 
-    .hero-content {
-        align-items: center;
-        gap: 1.5rem;
+    .badge-1,
+    .badge-2,
+    .badge-3 {
+        display: none;
     }
 
-    .hero-title {
-        font-size: 2.8rem;
-    }
-
-    .hero-description {
-        font-size: 1.1rem;
-        max-width: 450px;
-        margin: 0 auto;
-    }
-
-    .floating-image {
-        max-width: 350px;
-    }
+    /* Hide badges on tablet */
 
     .hash-and-line {
         font-size: 1.8rem;
@@ -1036,38 +1142,26 @@ footer {
         align-items: center;
     }
 
-    #hero-section {
-        flex-direction: column-reverse; /* In grid, we can just use order but let's change display to flex for mobile */
-        display: flex;
-        gap: 3rem;
+    .hero-title-massive {
+        font-size: 2.8rem;
     }
 
-    .hero-content {
-        align-items: center;
-        gap: 1.5rem;
-        text-align: center;
-    }
-
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-description {
+    .hero-description-centered {
         font-size: 1rem;
-        max-width: 100%;
+        padding: 0 1rem;
     }
 
-    .hero-buttons {
+    .hero-buttons-centered {
         flex-direction: column;
         width: 100%;
+        align-items: center;
     }
 
-    .primary-button, .secondary-button {
+    .hero-buttons-centered .primary-button,
+    .hero-buttons-centered .secondary-button {
         width: 100%;
-    }
-
-    .floating-image {
-        max-width: 280px;
+        max-width: 300px;
+        text-align: center;
     }
 
     .about-content-info {
