@@ -552,6 +552,10 @@ main {
     animation-delay: 0.4s;
 }
 
+.experience-panel.active .exp-details li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
 .experience-panel h3 {
     font-size: 1.5rem;
     color: white;
