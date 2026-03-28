@@ -8,7 +8,7 @@ const navMenu = document.getElementById('nav-menu');
 links.forEach(link => {
     const handleExp = (e) => {
         if (e.type === 'click') e.preventDefault();
-        
+
         const targetId = link.dataset.target;
         const targetPanel = document.getElementById(targetId);
 
@@ -59,17 +59,17 @@ if (canvas) {
         radius: 120
     };
 
-    window.addEventListener('mousemove', function(event) {
+    window.addEventListener('mousemove', function (event) {
         mouse.x = event.x;
         mouse.y = event.y;
     });
 
-    window.addEventListener('mouseout', function() {
+    window.addEventListener('mouseout', function () {
         mouse.x = null;
         mouse.y = null;
     });
 
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         canvas.width = window.innerWidth;
         canvas.height = heroSection.offsetHeight;
         init();
@@ -129,7 +129,7 @@ if (canvas) {
         for (let a = 0; a < particlesArray.length; a++) {
             for (let b = a; b < particlesArray.length; b++) {
                 let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
-                               ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
                 if (distance < (canvas.width / 7) * (canvas.height / 7)) {
                     opacityValue = 1 - (distance / 20000);
                     ctx.strokeStyle = 'rgba(199, 120, 221,' + opacityValue + ')';
@@ -154,8 +154,8 @@ if (canvas) {
     init();
     animate();
 }
-// --- Reveal Animations ---
-const revealElements = document.querySelectorAll('.skill-container');
+
+const revealElements = document.querySelectorAll('.skill-container, .project-card');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
