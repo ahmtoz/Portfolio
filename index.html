@@ -36,7 +36,6 @@
             <div class="hero-bg-overlay"></div>
 
             <div class="hero-content-centered">
-                <!-- Floating Glass Badges -->
                 <div class="floating-badge badge-1">✦ UI/UX Enthusiast</div>
                 <div class="floating-badge badge-2">✦ Frontend Developer</div>
                 <div class="floating-badge badge-3">✦ UI-Focused Developer</div>
@@ -54,8 +53,7 @@
                 </div>
             </div>
 
-            <!-- Mouse Scroll Indicator -->
-            <div class="scroll-indicator">
+            <div class="scroll-indicator" onclick="window.location.href='#about-section'">
                 <div class="mouse">
                     <div class="wheel"></div>
                 </div>
@@ -162,29 +160,51 @@
         </section>
         <section id="skills-section">
             <h2 class="hash-and-line">skills</h2>
-            <div class="skills-wrapper">
-                <div class="skill-container">
-                    <h4>Frontend Development</h4>
+            <div class="skills-wrapper bento-grid">
+                <div class="skill-container bento-large">
+                    <div class="skill-header">
+                        <i class="fas fa-code"></i>
+                        <h4>Core Web Technologies</h4>
+                    </div>
                     <div class="skill-tags">
-                        <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
-                        <span>React</span> <span>Next.js</span>
-                        <span>Responsive Design</span> <span>Accessibility</span>
+                        <span>HTML5</span> <span>CSS3</span>
+                        <span>JavaScript (ES6+)</span> <span>React</span> <span>Tailwind CSS</span> <span>SCSS</span>
+                        <span>styled-components</span>
+                        <span>Next.js</span>
                     </div>
                 </div>
 
-                <div class="skill-container">
-                    <h4>Tools & Technologies</h4>
+                <div class="skill-container bento-small">
+                    <div class="skill-header">
+                        <i class="fas fa-terminal"></i>
+                        <h4>Tools & Workflow</h4>
+                    </div>
                     <div class="skill-tags">
-                        <span>Git</span> <span>GitHub</span> <span>API Integration</span>
-                        <span>Component Architecture</span> <span>UI Design</span>
+                        <span>Git</span> <span>GitHub</span> <span>CI/CD</span> <span>BrowserStack</span>
+                        <span>Drupal CMS</span> <span>WordPress</span> <span>Figma</span>
                     </div>
                 </div>
 
-                <div class="skill-container">
-                    <h4>Other Skills</h4>
+                <div class="skill-container bento-medium">
+                    <div class="skill-header">
+                        <i class="fas fa-universal-access"></i>
+                        <h4>Standards & Principles</h4>
+                    </div>
                     <div class="skill-tags">
-                        <span>B2 English</span> <span>Problem Solving</span>
-                        <span>Communication</span> <span>Learning Tech</span>
+                        <span>Web Accessibility (WCAG)</span>
+                        <span>UX/UI Principles</span> <span>Semantic HTML</span> <span>Responsive Design</span>
+                        <span>i18n</span> <span>Performance Optimization</span>
+                    </div>
+                </div>
+
+                <div class="skill-container bento-medium">
+                    <div class="skill-header">
+                        <i class="fas fa-brain"></i>
+                        <h4>Background & Interests</h4>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Instructional Design</span> <span>Psychology</span>
+                        <span>Cognitive Science</span>
                     </div>
                 </div>
             </div>

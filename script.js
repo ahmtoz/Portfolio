@@ -154,3 +154,20 @@ if (canvas) {
     init();
     animate();
 }
+// --- Reveal Animations ---
+const revealElements = document.querySelectorAll('.skill-container');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+revealElements.forEach(el => {
+    revealObserver.observe(el);
+});

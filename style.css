@@ -220,7 +220,6 @@ main {
     animation: floatBadge 7s infinite ease-in-out 1s;
 }
 
-/* Mouse Scroll Indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 2.5rem;
@@ -231,6 +230,22 @@ main {
     z-index: 2;
     animation: fadeIn 2s ease-out 1s forwards;
     opacity: 0;
+    cursor: pointer;
+}
+
+.scroll-indicator:hover p {
+    color: #C778DD;
+    transition: color 0.3s ease;
+}
+
+.scroll-indicator:hover .mouse {
+    border-color: #C778DD;
+    transition: border-color 0.3s ease;
+}
+
+.scroll-indicator:hover .wheel {
+    background-color: #C778DD;
+    transition: background-color 0.3s ease;
 }
 
 .scroll-indicator p {
@@ -301,7 +316,6 @@ main {
     }
 }
 
-/* Left primary/secondary buttons intact */
 
 .primary-button {
     padding: 0.8rem 1.5rem;
@@ -344,7 +358,6 @@ main {
     text-underline-offset: 4px;
 }
 
-/* Removing old hero image CSS and animations */
 
 @keyframes fadeUp {
     from {
@@ -593,67 +606,169 @@ ul.exp-details li::before {
     font-size: 1.2rem;
 }
 
-.skills-wrapper {
+.skills-wrapper.bento-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1.5rem;
     padding-block-start: 4rem;
 }
 
 .skill-container {
-    height: 100%;
-    border: 1px solid #ABB2BF;
-    background-color: transparent;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.skill-container.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-container:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.skill-container:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.skill-container:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.skill-container:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.skill-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(199, 120, 221, 0.1), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .skill-container:hover {
-    transform: translateY(-5px);
-    border-color: #C778DD;
+    transform: translateY(-8px);
+    border-color: rgba(199, 120, 221, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(199, 120, 221, 0.1);
+}
+
+.skill-container:hover::before {
+    opacity: 1;
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-header i {
+    font-size: 1.5rem;
+    color: #C778DD;
+    filter: drop-shadow(0 0 5px rgba(199, 120, 221, 0.4));
 }
 
 .skill-container h4 {
-    padding: 0.8rem;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #ABB2BF;
+    font-size: 1.2rem;
     color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
-    padding: 1rem;
+    gap: 0.8rem;
 }
 
 .skill-tags span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #ABB2BF;
-    border: 1px solid #444;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
     background: rgba(171, 178, 191, 0.05);
-    transition: 0.3s;
+    border: 1px solid rgba(171, 178, 191, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .skill-tags span:hover {
-    color: #C778DD;
+    color: white;
+    background: rgba(199, 120, 221, 0.15);
     border-color: #C778DD;
-    background: rgba(199, 120, 221, 0.1);
+    transform: scale(1.05);
 }
 
 .skill-tags span::before {
-    content: "<";
+    content: "•";
     color: #C778DD;
-    margin-right: 4px;
+    margin-right: 8px;
     font-weight: bold;
 }
 
-.skill-tags span::after {
-    content: " />";
-    color: #C778DD;
-    margin-left: 4px;
-    font-weight: bold;
+.bento-large {
+    grid-column: span 4;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.bento-medium {
+    grid-column: span 3;
+}
+
+.bento-small {
+    grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+    .skills-wrapper.bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .bento-large {
+        grid-column: span 4;
+    }
+
+    .bento-medium, .bento-small {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-wrapper.bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-large,
+    .bento-medium,
+    .bento-small {
+        grid-column: span 1;
+    }
+
+    section {
+        padding: 4rem 2rem;
+    }
 }
 
 .projects-wrapper {
@@ -1227,27 +1342,7 @@ footer {
         font-size: 1.2rem;
     }
 
-    .skills-wrapper {
-        flex-direction: column;
-        gap: 2rem;
-        padding-block-start: 2rem;
-        align-items: center;
-    }
-
-    .skill-container {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .skill-container h4 {
-        font-size: 1.1rem;
-        text-align: center;
-    }
-
-    .skill-container p {
-        font-size: 1rem;
-        text-align: center;
-    }
+    /* Skills section handled by new bento grid media queries */
 
     .projects-wrapper {
         flex-direction: column;
@@ -1349,4 +1444,36 @@ footer {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+/* Shimmer Effect for Skills */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skill-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent);
+    transform: translateX(-100%);
+    transition: none;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.skill-container:hover::after {
+    animation: shimmer 1.5s infinite;
 }
