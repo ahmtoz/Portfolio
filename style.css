@@ -96,7 +96,12 @@ nav ul li a::before {
 
 section {
     padding: 5rem 10rem;
+    max-width: 1440px;
     margin-inline: auto;
+}
+
+section:first-child {
+    max-width: unset;
 }
 
 #hero-section {
@@ -750,7 +755,8 @@ ul.exp-details li::before {
         grid-column: span 4;
     }
 
-    .bento-medium, .bento-small {
+    .bento-medium,
+    .bento-small {
         grid-column: span 2;
     }
 }
@@ -833,47 +839,6 @@ ul.exp-details li::before {
 .project-button-wrapper {
     display: flex;
     gap: 1.25rem;
-}
-
-.hobbies-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 4rem;
-    align-items: center;
-}
-
-.hobbies-info-container {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    max-width: 25rem;
-}
-
-.hobbies-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    border: 1px solid #cccccc;
-    padding: .5rem 1rem;
-    transition: 0.3s;
-}
-
-.hobbies-info:hover {
-    border-color: #C778DD;
-    color: #C778DD;
-}
-
-.hobbies-image-container {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.hobbies-image-container img {
-    width: 15rem;
-    height: auto;
 }
 
 .contact-container {
