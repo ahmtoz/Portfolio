@@ -43,6 +43,9 @@
             <a href="mailto:oz.ahmetf@gmail.com" class="social-link" aria-label="Mail">
                 <i class="fas fa-envelope"></i>
             </a>
+            <a href="https://medium.com/@oz.ahmetf" target="_blank" class="social-link" aria-label="Medium">
+                <i class="fa-brands fa-medium"></i>
+            </a>
             <div class="social-line"></div>
         </div>
     </div>
@@ -220,7 +223,7 @@
                     </div>
                     <div class="skill-tags">
                         <span>Instructional Design</span> <span>Psychology</span>
-                        <span>Cognitive Science</span>
+                        <span>Cognitive Science</span> <span>Networking</span>
                     </div>
                 </div>
             </div>
@@ -399,10 +402,18 @@
                         <a href="https://linkedin.com/in/ahmet-faruk-öz" target="_blank" class="link">
                             <i class="fab fa-linkedin"></i> <span>linkedin</span>
                         </a>
+
+                        <a href="https://codepen.io/Ahmet-Faruk-OZ" target="_blank" class="link">
+                            <i class="fab fa-codepen"></i> <span>codepen</span>
+                        </a>
+
+                        <a href="https://medium.com/@oz.ahmetf" target="_blank" class="link">
+                            <i class="fa-brands fa-medium"></i> <span>medium</span>
+                        </a>
                     </div>
                 </div>
 
-                <form class="contact-form">
+                <form class="contact-form" id="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="ahmet" required>
@@ -420,10 +431,15 @@
 
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Your message here..."></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message here..."
+                            required></textarea>
                     </div>
 
-                    <button type="submit" class="primary-button">Send</button>
+                    <button type="submit" class="primary-button glowing-btn" id="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                    </button>
+                    <div id="form-status" class="form-status"></div>
                 </form>
             </div>
         </section>
@@ -447,6 +463,10 @@
 
                         <a href="mailto:oz.ahmetf@gmail.com" aria-label="Email">
                             <i class="fas fa-envelope"></i>
+                        </a>
+
+                        <a href="https://medium.com/@oz.ahmetf" target="_blank" aria-label="Medium">
+                            <i class="fa-brands fa-medium"></i>
                         </a>
                     </div>
                 </div>
