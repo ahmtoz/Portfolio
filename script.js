@@ -35,15 +35,18 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
 });
+const navLinks = document.querySelectorAll('nav ul li a');
 
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
+navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     });
 });
 
-// --- Interactive Canvas Background ---
 const canvas = document.getElementById("hero-canvas");
 if (canvas) {
     const ctx = canvas.getContext("2d");
