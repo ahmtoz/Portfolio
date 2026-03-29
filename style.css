@@ -1549,3 +1549,69 @@ footer {
 .skill-container:hover::after {
     animation: shimmer 1.5s infinite;
 }
+
+.social-sidebar {
+    position: fixed;
+    bottom: 0px;
+    left: 20px;
+    z-index: 10;
+    animation: fadeInSidebar 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.social-links-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    font-size: 1.35rem;
+    color: #ABB2BF;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    color: #C778DD;
+    transform: translateY(-5px) scale(1.1);
+}
+
+.social-line {
+    width: 1.5px;
+    height: 100px;
+    background: linear-gradient(to bottom, #C778DD, transparent);
+    margin-top: 0.5rem;
+}
+
+@keyframes fadeInSidebar {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .social-sidebar {
+        left: 10px;
+    }
+
+    .social-line {
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-sidebar {
+        display: none;
+    }
+}
