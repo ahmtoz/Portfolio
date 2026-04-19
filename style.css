@@ -985,6 +985,16 @@ ul.exp-details li::before {
     color: #ABB2BF;
 }
 
+.info ul li a {
+    color: #ABB2BF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.info ul li a:hover {
+    color: #C778DD;
+}
+
 .links-container {
     display: flex;
     flex-direction: column;
