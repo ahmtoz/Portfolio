@@ -15,11 +15,11 @@
             <div class="nav-logo">
                 <a href="#">Ahmet Faruk ÖZ</a>
             </div>
-            <div class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul id="nav-menu">
                 <li><a href="#about-section">about-me</a></li>
                 <li><a href="#experience-section">experience</a></li>
@@ -51,33 +51,33 @@
     </div>
     <main>
         <section id="hero-section">
-            <canvas id="hero-canvas" class="hero-bg"></canvas>
+            <canvas id="hero-canvas" class="hero-bg" aria-hidden="true"></canvas>
             <div class="hero-bg-overlay"></div>
 
             <div class="hero-content-centered">
-                <div class="floating-badge badge-1">✦ UI/UX Enthusiast</div>
-                <div class="floating-badge badge-2">✦ Frontend Developer</div>
-                <div class="floating-badge badge-3">✦ UI-Focused Developer</div>
+                <div class="floating-badge badge-1"><span aria-hidden="true">✦</span> Web Accessibility (A11y)
+                </div>
+                <div class="floating-badge badge-2"><span aria-hidden="true">✦</span> Frontend Developer
+                </div>
+                <div class="floating-badge badge-3"><span aria-hidden="true">✦</span> UI Developer</div>
 
-                <span class="hero-greeting">Hi, I am Ahmet 👋</span>
+                <p class="hero-greeting">Hi, I am Ahmet 👋</p>
                 <h1 class="hero-title-massive">Frontend & UI Developer</h1>
-                <p class="hero-description-centered">Transforming ideas into clean, accessible, and user-focused web
-                    interfaces with modern technologies.</p>
+                <p class="hero-description-centered">I aim to build fast, accessible, and scalable web interfaces using
+                    React and modern frontend tools. Currently working at Jotform.
 
                 <div class="hero-buttons-centered">
-                    <button class="primary-button glowing-btn" onclick="window.location.href='#contact-section'">Contact
-                        me</button>
-                    <button class="secondary-button" onclick="window.location.href='#projects-section'">View
-                        Projects</button>
+                    <a class="primary-button glowing-btn" href="#projects-section">View Projects</a>
+                    <a class="secondary-button" href="#contact-section">Contact</a>
                 </div>
             </div>
 
-            <div class="scroll-indicator" onclick="window.location.href='#about-section'">
+            <a class="scroll-indicator" href="#about-section">
                 <div class="mouse">
                     <div class="wheel"></div>
                 </div>
                 <p>Scroll</p>
-            </div>
+            </a>
         </section>
         <section id="about-section" class="split-about">
             <div class="about-content">
@@ -118,22 +118,23 @@
             <div class="experince-content">
                 <h2 class="hash-and-line">experience</h2>
                 <div class="experience-content-wrapper">
-                    <ul class="experience-list">
+                    <ul class="experience-list" role="tablist">
                         <li>/ JOTFORM
                             <ul>
-                                <li><a href="#" data-target="exp-jotform-ui" class="active-link">/UI Developer</a>
+                                <li><a href="#" data-target="exp-jotform-ui" class="active-link" role="tab" aria-selected="true" aria-controls="exp-jotform-ui">/UI
+                                        Developer</a></li>
+                                <li><a href="#" data-target="exp-jotform-intern" role="tab" aria-selected="false" aria-controls="exp-jotform-intern">/UI Developer Intern</a>
                                 </li>
-                                <li><a href="#" data-target="exp-jotform-intern">/UI Developer Intern</a></li>
                             </ul>
                         </li>
                         <li>/ METU (Middle East Technical University)
                             <ul>
-                                <li><a href="#" data-target="exp-metu">/Student Assistant</a></li>
+                                <li><a href="#" data-target="exp-metu" role="tab" aria-selected="false" aria-controls="exp-metu">/Student Assistant</a></li>
                             </ul>
                         </li>
                     </ul>
 
-                    <div class="experience-panel active" id="exp-jotform-ui">
+                    <div class="experience-panel active" id="exp-jotform-ui" role="tabpanel">
                         <h3>UI Developer — Jotform</h3>
                         <p class="exp-date">Nov 2025 – Present</p>
                         <ul class="exp-details">
@@ -151,7 +152,7 @@
                         </ul>
                     </div>
 
-                    <div class="experience-panel" id="exp-jotform-intern">
+                    <div class="experience-panel" id="exp-jotform-intern" role="tabpanel">
                         <h3>UI Developer Intern — Jotform</h3>
                         <p class="exp-date">Aug 2025 – Sept 2025</p>
                         <ul class="exp-details">
@@ -166,7 +167,7 @@
                         </ul>
                     </div>
 
-                    <div class="experience-panel" id="exp-metu">
+                    <div class="experience-panel" id="exp-metu" role="tabpanel">
                         <h3>Student Assistant — Middle East Technical University</h3>
                         <p class="exp-date">Jan 2025 – Aug 2025</p>
                         <ul class="exp-details">
@@ -193,7 +194,7 @@
                         <span>HTML5</span> <span>CSS3</span>
                         <span>JavaScript (ES6+)</span> <span>React</span> <span>Tailwind CSS</span> <span>SCSS</span>
                         <span>styled-components</span>
-                        <span>Next.js</span>
+                        <span>Next.js</span> <span>Supabase</span>
                     </div>
                 </div>
 
@@ -227,7 +228,7 @@
                     </div>
                     <div class="skill-tags">
                         <span>Instructional Design</span> <span>Psychology</span>
-                        <span>Cognitive Science</span> <span>Networking</span>
+                        <span>Cognitive Science</span> <span>Computer Networks</span>
                     </div>
                 </div>
             </div>
@@ -237,13 +238,13 @@
             <div class="projects-wrapper">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="./images/easeo.png" alt="AccEase">
+                        <img src="./images/easeo.png" alt="Accextension">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/ahmtoz/Accextension" target="_blank" title="Source Code">
+                                <a href="https://github.com/ahmtoz/Accextension" target="_blank" aria-label="GitHub Repository" title="Source Code">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://ahmtoz.github.io/Accextension/" target="_blank" title="Live Demo">
+                                <a href="https://ahmtoz.github.io/Accextension/" target="_blank" aria-label="Live Demo" title="Live Demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -262,13 +263,12 @@
                 <div class="project-card">
                     <div class="project-image">
                         <img src="./images/hezarfapp.png" alt="HezarfApp">
-                        <div class="project-badge">Coming Soon</div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/ahmtoz/HezarfApp" target="_blank" title="Source Code">
+                                <a href="https://github.com/ahmtoz/HezarfApp" target="_blank" aria-label="GitHub Repository" title="Source Code">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://hezarf-app.vercel.app/" target="_blank" title="Live Demo">
+                                <a href="https://hezarf-app.vercel.app/" target="_blank" aria-label="Live Demo" title="Live Demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -276,11 +276,11 @@
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span>React</span> <span>Vite</span> <span>Tailwind CSS</span>
+                            <span>React</span><span>Tailwind CSS</span> <span>Supabase</span>
                         </div>
                         <h3>HezarfApp</h3>
-                        <p>A modern, premium productivity tool featuring a smart stopwatch, dynamic labeling, and visual
-                            analytics to effectively track and categorize your time.</p>
+                        <p>A productivity tool featuring a smart stopwatch, dynamic labeling, and visual analytics to
+                            effectively track and categorize your time.</p>
                     </div>
                 </div>
 
@@ -289,11 +289,10 @@
                         <img src="./images/translation.png" alt="Translation App">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/ahmtoz/React-Translation-App" target="_blank"
-                                    title="Source Code">
+                                <a href="https://github.com/ahmtoz/React-Translation-App" target="_blank" aria-label="GitHub Repository" title="Source Code">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://translaterapp.vercel.app/" target="_blank" title="Live Demo">
+                                <a href="https://translaterapp.vercel.app/" target="_blank" aria-label="Live Demo" title="Live Demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -305,8 +304,7 @@
                         </div>
                         <h3>Translation App</h3>
                         <p>Responsive translation tool built with React, Next.js, and Tailwind CSS featuring
-                            component-based architecture and
-                            modern routing.</p>
+                            component-based architecture and modern routing.</p>
                     </div>
                 </div>
 
@@ -315,7 +313,7 @@
                         <img src="./images/github.png" alt="GitHub API">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/ahmtoz/Github_API" target="_blank" title="Source Code">
+                                <a href="https://github.com/ahmtoz/Github_API" target="_blank" aria-label="GitHub Repository" title="Source Code">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -326,20 +324,19 @@
                             <span>React</span> <span>Async JS</span> <span>API</span>
                         </div>
                         <h3>GitHub API App</h3>
-                        <p>Dynamic dashboard that fetches and displays real-time GitHub user data using asynchronous
-                            JavaScript.</p>
+                        <p>A real-time data interface utilizing asynchronous JavaScript to fetch and visualize GitHub
+                            user metrics.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image">
                         <img src="./images/dingo-qrmenu.png" alt="Dingo QR Menu">
-                        <div class="project-badge">New & Featured</div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/ahmtoz/dingo-qrmenu" target="_blank" title="Source Code">
+                                <a href="https://github.com/ahmtoz/dingo-qrmenu" target="_blank" aria-label="GitHub Repository" title="Source Code">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://dingomenu.vercel.app" target="_blank" title="Live Demo">
+                                <a href="https://dingomenu.vercel.app" target="_blank" aria-label="Live Demo" title="Live Demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -360,8 +357,7 @@
                         <img src="./images/ıspı.jpeg" alt="ISPI Global">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://linkedin.com/in/ahmet-faruk-öz" target="_blank"
-                                    title="Case Study Details">
+                                <a href="https://linkedin.com/in/ahmet-faruk-öz" target="_blank" aria-label="View Case Study" title="Case Study Details">
                                     <i class="fas fa-info-circle"></i>
                                 </a>
                             </div>
@@ -382,8 +378,7 @@
                         <img src="./images/tubitak.jpeg" alt="TÜBİTAK">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://linkedin.com/in/ahmet-faruk-öz" target="_blank"
-                                    title="Research Details">
+                                <a href="https://linkedin.com/in/ahmet-faruk-öz" target="_blank" aria-label="View Research Details" title="Research Details">
                                     <i class="fas fa-info-circle"></i>
                                 </a>
                             </div>
@@ -404,7 +399,7 @@
                         <img src="./images/role-play-game.png" alt="The Kingkiller Chronicle RPG">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/ahmtoz/role-play-game" target="_blank" title="Source Code">
+                                <a href="https://github.com/ahmtoz/role-play-game" target="_blank" aria-label="GitHub Repository" title="Source Code">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -425,7 +420,7 @@
                         <img src="./images/tictactoe.png" alt="Tic Tac Toe">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/ahmtoz/TicTacToe" target="_blank" title="Source Code">
+                                <a href="https://github.com/ahmtoz/TicTacToe" target="_blank" aria-label="GitHub Repository" title="Source Code">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -436,8 +431,8 @@
                             <span>React Hooks</span> <span>State Management</span>
                         </div>
                         <h3>Tic Tac Toe</h3>
-                        <p>Interactive game implementing React state management and algorithmic logic for user
-                            interactions.</p>
+                        <p>A foundational exercise in React component logic, state management, and algorithmic
+                            rendering.</p>
                     </div>
                 </div>
 
@@ -503,7 +498,7 @@
                         <span>Send Message</span>
                         <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
                     </button>
-                    <div id="form-status" class="form-status"></div>
+                    <div id="form-status" class="form-status" aria-live="polite"></div>
                 </form>
             </div>
         </section>

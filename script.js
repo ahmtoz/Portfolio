@@ -14,13 +14,19 @@ expLinks.forEach(link => {
     const handleExp = (e) => {
         if (e.type === 'click') e.preventDefault();
 
+        if (e.type === 'click' && link.classList.contains('active-link')) return;
+
         const targetId = link.dataset.target;
         const targetPanel = document.getElementById(targetId);
 
         panels.forEach(p => p.classList.remove("active"));
-        expLinks.forEach(l => l.classList.remove("active-link"));
+        expLinks.forEach(l => {
+            l.classList.remove("active-link");
+            l.setAttribute("aria-selected", "false");
+        });
 
         link.classList.add("active-link");
+        link.setAttribute("aria-selected", "true");
 
         if (window.innerWidth <= 768) {
             link.closest('li').appendChild(targetPanel);
@@ -32,12 +38,14 @@ expLinks.forEach(link => {
     };
 
     link.addEventListener("click", handleExp);
-    link.addEventListener("mouseenter", handleExp);
 });
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    
+    const isExpanded = hamburger.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', isExpanded);
 });
 
 navLinks.forEach(link => {
