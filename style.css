@@ -42,6 +42,11 @@ nav {
     margin-inline: auto;
 }
 
+.hamburger {
+    background-color: transparent;
+    border: none;
+}
+
 .nav-logo a {
     text-decoration: none;
     color: #ffffff;
@@ -1363,8 +1368,6 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 6px;
-        background-color: transparent;
-        border: none;
         cursor: pointer;
         z-index: 20;
     }
