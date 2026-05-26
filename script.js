@@ -43,7 +43,7 @@ expLinks.forEach(link => {
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
-    
+
     const isExpanded = hamburger.classList.contains('active');
     hamburger.setAttribute('aria-expanded', isExpanded);
 });
@@ -364,51 +364,82 @@ if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        // Check if form is already submitting
         if (submitBtn.disabled) return;
 
-        // Visual feedback - loading state
         submitBtn.disabled = true;
         const originalBtnContent = submitBtn.innerHTML;
         submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
 
-        // Form status message
+        const formInputs = contactForm.querySelectorAll('input, textarea');
+        formInputs.forEach(input => input.disabled = true);
+
         formStatus.textContent = '';
         formStatus.className = 'form-status';
 
-        // Simulate API call (Wait for 1.5 seconds)
-        setTimeout(() => {
-            // Success state
-            submitBtn.innerHTML = '<span>Message Sent!</span> <i class="fas fa-check-circle"></i>';
-            submitBtn.style.backgroundColor = '#43D9AD';
-            submitBtn.style.borderColor = '#43D9AD';
+        const nameVal = document.getElementById('name').value;
+        const emailVal = document.getElementById('email').value;
+        const subjectVal = document.getElementById('subject').value;
+        const messageVal = document.getElementById('message').value;
 
-            formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-            formStatus.classList.add('success');
+        // Call FormSubmit AJAX API
+        fetch("https://formsubmit.co/ajax/oz.ahmetf@gmail.com", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                name: nameVal,
+                email: emailVal,
+                subject: subjectVal,
+                message: messageVal
+            })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Form submission network error");
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success === "true" || data.success === true) {
+                    // Success state
+                    submitBtn.innerHTML = '<span>Message Sent!</span> <i class="fas fa-check-circle"></i>';
+                    submitBtn.style.backgroundColor = '#43D9AD';
+                    submitBtn.style.borderColor = '#43D9AD';
 
-            // Log for verification (this answers "is it working")
-            console.info("Form submission simulated successfully.", {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            });
+                    formStatus.textContent = 'Thank you! Your message has been sent successfully.';
+                    formStatus.classList.add('success');
 
-            // Reset form
-            contactForm.reset();
+                    contactForm.reset();
+                } else {
+                    throw new Error(data.message || "Form submission failed");
+                }
+            })
+            .catch(error => {
+                console.error("Form submission error:", error);
 
-            // Re-enable and reset button after 3 seconds
-            setTimeout(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnContent;
-                submitBtn.style.backgroundColor = '';
-                submitBtn.style.borderColor = '';
+                submitBtn.innerHTML = '<span>Failed!</span> <i class="fas fa-exclamation-circle"></i>';
+                submitBtn.style.backgroundColor = '#E06C75';
+                submitBtn.style.borderColor = '#E06C75';
 
+                formStatus.textContent = 'Oops! Something went wrong. Please try again later.';
+                formStatus.classList.add('error');
+            })
+            .finally(() => {
                 setTimeout(() => {
-                    formStatus.textContent = '';
-                    formStatus.className = 'form-status';
-                }, 1000);
-            }, 3000);
-        }, 1500);
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.style.borderColor = '';
+
+                    formInputs.forEach(input => input.disabled = false);
+
+                    setTimeout(() => {
+                        formStatus.textContent = '';
+                        formStatus.className = 'form-status';
+                    }, 1000);
+                }, 3000);
+            });
     });
 }
